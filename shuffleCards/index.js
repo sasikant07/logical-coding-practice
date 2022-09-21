@@ -9,11 +9,7 @@
  
    for (let i = 0; i < suits.length; i++) {
      for (let j = 0; j < values.length; j++) {
-       if (suits[i] && values[j]) {
-         
-       }
        deck.push({suits : suits[i],values: values[j]});
-       // console.log(result)
      }
    }
  
