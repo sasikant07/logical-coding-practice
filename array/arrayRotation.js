@@ -27,4 +27,26 @@ function arrayRotatios(arr, numberOfShipfts) {
 // console.log("final output:", arrayRotation(nums, k));
 
 
-arrayRotatios(nums, k);
+// arrayRotatios(nums, k);
+
+
+
+
+// Simple one
+
+function rotateArray(arr, k) {
+    for (let i = 0; i < k; i++) {
+        let temp = arr[0];
+        for (let j = 0; j < arr.length; j++) {
+            arr[j] = arr[j + 1];
+        }
+        arr[arr.length - 1] = temp;
+    }
+    return arr;
+}
+
+let numArr = [1, 2, 3, 4, 5]
+let r = 1;
+
+console.log(rotateArray(numArr, r));    // [ 2, 3, 4, 5, 1 ]
+console.log(rotateArray(numArr, 3));    // [ 5, 1, 2, 3, 4 ]
