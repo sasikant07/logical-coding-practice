@@ -50,3 +50,17 @@ let r = 1;
 
 console.log(rotateArray(numArr, r));    // [ 2, 3, 4, 5, 1 ]
 console.log(rotateArray(numArr, 3));    // [ 5, 1, 2, 3, 4 ]
+
+
+
+// Left Rotation
+function leftRotateArray (arr, num) {
+    for (let i = 0; i < num; i++) {
+        let lastItem = arr.pop();
+        arr.unshift(lastItem);
+    }
+
+    return arr;
+}
+
+console.log(leftRotateArray([1, 2, 3, 4, 5], 3));    // [ 3, 4, 5, 1, 2 ]

@@ -21,3 +21,19 @@ console.log(result);    // { '10': 1, '20': 2 }
 
 const res =countFrequency(['a', 'b', 'a', 'a', 'c', 'c']);
 console.log(res);   // { a: 3, b: 1, c: 2 }
+
+
+// using Array.reduce() methods
+const fruits = ["apple", "banana", "orange", "apple", "orange"];
+
+const fruitCount = fruits.reduce((accumulator, fruit) => {
+    if (accumulator[fruit]) {
+        accumulator[fruit] = accumulator[fruit] + 1;
+    } else {
+        accumulator[fruit] = 1;
+    }
+
+    return accumulator;
+}, {});
+
+console.log(fruitCount);       // { apple: 2, banana: 1, orange: 2 }

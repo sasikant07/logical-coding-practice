@@ -25,4 +25,4 @@ function reverseOnlyCharacter(str) {
     return results.join('');    // array convers into string
 }
 
-console.log(reverseOnlyCharacter("a,b$c"));
+console.log(reverseOnlyCharacter("a,b$c"));     // c,b$a
