@@ -34,3 +34,27 @@ const isAnagram = (str1, str2) => {
   console.log(isAnagram('iceman', 'cinema')); 
   console.log(isAnagram('madam', 'madam'));
   
+
+  // optimised solution
+  function checkAnagram (str1, str2) {
+    if (str1.length !== str2.length) return false;
+
+    let obj1 = {};
+    let obj2 = {};
+
+    for (let i = 0; i < str1.length; i++) {
+        obj1[str1[i]] = (obj1[str1[i]] || 0) + 1;
+        obj2[str2[i]] = (obj2[str2[i]] || 0) + 1;
+    }
+
+    for (const key in obj1) {
+        if (obj1[key] !== obj2[key]) {
+            return false;
+        }
+    }
+
+    return true;
+  }
+
+  console.log(checkAnagram("listen", "silent"));    // true
+  console.log(checkAnagram("car", "rat"));          // false

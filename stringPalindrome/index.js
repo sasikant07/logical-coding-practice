@@ -27,10 +27,19 @@ isPalindrome("Dad");    // Not Palindrome
 
 
 // Array Palindrome
-const strArray = ['dad', 'mad', 'nan', 'madam', 'hello'];
-
 function elementPalindrome(arr) {
-
+    let pallindromicValue = [];
+    
+    for (let i = 0; i < arr.length; i++) {
+        let j = arr[i].split("").reverse().join("");
+        
+        if (arr[i] === j) {
+            pallindromicValue.push(arr[i]);
+        }
+    }
+    
+    return pallindromicValue;
 }
 
-console.log(elementPalindrome(strArray))
+const strArray = ['dad', 'mad', 'nan', 'madam', 'hello'];
+console.log(elementPalindrome(strArray));       // [ 'dad', 'nan', 'madam' ]
