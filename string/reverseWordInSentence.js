@@ -91,3 +91,38 @@ console.log(reverseWords(phrase));  // JavaScript Love I
  * Time Complexity O(N)
  * Space Complexity O(1)
  */
+
+
+//===========================================================================================
+
+// Input: This is Javacript Code
+// Output: sihT si tpircavaJ edoC
+
+
+const str = "This is Javacript Code";
+
+const arrOfStr = str.split(" ");
+
+const reverseStr = arrOfStr.map((item) => {
+    return item.split("").reverse().join("")
+}).join(" ");
+
+console.log(reverseStr);    // sihT si tpircavaJ edoC
+
+
+//=========================================================================================
+
+function reverseOnlyWord(str) {
+    let revArray = [];
+    let strength = str.split(" ");
+
+    for (let i = 0; i < strength.length; i++) {
+        let a = strength[i].split("").reverse().join("");
+        revArray.push(a);
+    }
+
+    return revArray.join(" ");
+}
+
+const str1 = "This is Javacript Code";
+console.log(reverseOnlyWord(str1));     // sihT si tpircavaJ edoC
