@@ -2,7 +2,7 @@
 // Input: 
 // Output:
 
-function isBalanced(str) {
+function isBalancedParenthesis(str) {
     let stack = [];
 
     let openingBrackets = {
@@ -33,4 +33,36 @@ function isBalanced(str) {
 
 // let string = "(())";     // true
 let string = "((]]"     // false
-console.log(isBalanced(string));
+console.log(isBalancedParenthesis(string));
+  
+//====================================================================================================================
+
+  function isBracketsBalanced(s) {
+    const stack = [];
+    const matchingBrackets = {
+      ')': '(',
+      ']': '[',
+      '}': '{',
+    };
+  
+    // Use a for loop to allow early return in case of unbalanced parentheses
+    for (let char of s) {
+      if (['(', '{', '['].includes(char)) {
+        stack.push(char); // Push opening brackets onto the stack
+      } else if ([')', '}', ']'].includes(char)) {
+        // Check if the last element of the stack matches the closing bracket
+        if (stack.pop() !== matchingBrackets[char]) {
+          return false; // Return false immediately if brackets are not balanced
+        }
+      }
+    }
+  
+    // If stack is empty, all brackets were balanced
+    return stack.length === 0;
+  }
+  
+  // Example usage:
+  console.log(isBracketsBalanced("{[()]}"));   // Output: true (Balanced)
+  console.log(isBracketsBalanced("{[(])}"));   // Output: false (Not balanced)
+  console.log(isBracketsBalanced("{[({})]}")); // Output: true (Balanced)
+  
