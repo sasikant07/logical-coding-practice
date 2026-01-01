@@ -28,7 +28,7 @@ function addBigNumber(num) {
   const finalOutput = arr.reduce((a, b) => a + b);
 
   if (finalOutput > 10) {
-    addNumber(finalOutput);
+    addBigNumber(finalOutput);
   } else {
     console.log(finalOutput);
   }
