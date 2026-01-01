@@ -19,4 +19,19 @@ function addData(data) {
     }
 }
 
-addData(5431);
+addData(5431);    // o/p --> 4
+
+//============================================================================================
+function addBigNumber(num) {
+  const arr = Array.from(String(num), Number);
+
+  const finalOutput = arr.reduce((a, b) => a + b);
+
+  if (finalOutput > 10) {
+    addNumber(finalOutput);
+  } else {
+    console.log(finalOutput);
+  }
+}
+
+addBigNumber(5431);   // o/p --> 4
