@@ -21,7 +21,7 @@ function addData(data) {
 
 addData(5431);    // o/p --> 4
 
-//============================================================================================
+//=======================================================================================================================================
 function addBigNumber(num) {
   const arr = Array.from(String(num), Number);
 
@@ -35,3 +35,34 @@ function addBigNumber(num) {
 }
 
 addBigNumber(5431);   // o/p --> 4
+
+
+//======================================================================================================================================
+
+function digitalRoot(num) {
+    if (num === 0) return 0;
+    return 1 + (num - 1) % 9;
+}
+
+console.log(digitalRoot(54321)); // 6
+//=======================================================================================================================================
+
+
+function getTotalSum(num) {
+    let sum = 0;
+
+    while (num > 0) {
+        sum += num % 10;
+        num = (num - (num % 10)) / 10;
+    }
+
+    // Repeat until single digit
+    if (sum > 9) {
+        return getTotalSum(sum);
+    }
+
+    return sum;
+}
+
+console.log(getTotalSum(54321)); // 6
+
