@@ -30,4 +30,19 @@
  console.log(shuffle(getDeck(suits, values)));
  
  // console.log(suits, values);
+
+
+//==================================================================================================================================
+var suits = ["spades", "diamonds", "clubs", "hearts"];
+var values = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+function getRandomCard(){
+    let max=Math.ceil(suits.length)
+    let suitsIndex = parseInt(Math.floor(Math.random()*(max-0)).toFixed(1))
+    let valuesIndex = parseInt(Math.floor(Math.random()*(Math.ceil(values.length)-0)).toFixed(1))
+    // console.log(suitsIndex,valuesIndex)
+    return [suitsIndex,valuesIndex]
+}
+result = getRandomCard()
+// console.log(result)
+console.log('Card is ',suits[result[0]],values[result[1]])
  
